@@ -17,14 +17,13 @@ class Clip{
         this.sWidth = 233; //裁剪框的宽
         this.sHeight = 175; //裁剪框的高 
         this.chooseBoxScale = 233/175;
-        this.file = file
 
-        this.handleFiles();
+        this.handleFiles(file);
     }
-    handleFiles(){
+    handleFiles(file){
         let t = this;
         let reader = new FileReader();
-        reader.readAsDataURL(t.file);
+        reader.readAsDataURL(file);
         reader.onload = function() {
             t.imgUrl = this.result;
             t.paintImg(this.result);
